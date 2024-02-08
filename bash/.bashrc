@@ -145,3 +145,9 @@ if [ -f '/home/cheyatz/google-cloud-sdk/path.bash.inc' ]; then . '/home/cheyatz/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/cheyatz/google-cloud-sdk/completion.bash.inc' ]; then . '/home/cheyatz/google-cloud-sdk/completion.bash.inc'; fi
+
+export DISPLAY=:0
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
