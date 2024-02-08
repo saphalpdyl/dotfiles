@@ -133,7 +133,7 @@ alias fd=fdfind
 alias v="fd --type f --hidden --exclude .git --exclude venv --exclude env | fzf-tmux -p --reverse | xargs nvim" # Fuzzy find | open in neovim 
 alias nv="nvim ."
 alias py=python3
-alias venv="source ./venv/bin/activate 2> /dev/null && source ./.venv/bin/activate 2> /dev/null && source ./env/bin/activate 2> /dev/null && source ./.env/bin/activate 2> /dev/null"
+alias venv="source ./venv/bin/activate 2> /dev/null; source ./.venv/bin/activate 2> /dev/null; source ./env/bin/activate 2> /dev/null; source ./.env/bin/activate 2> /dev/null"
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
