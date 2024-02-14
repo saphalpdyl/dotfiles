@@ -126,7 +126,7 @@ eval "$(starship init bash)"
 
 # Github SSH Agent
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/github_auth
 
 # Aliases
 alias fd=fdfind
