@@ -134,6 +134,7 @@ alias v="fd --type f --hidden --exclude .git --exclude venv --exclude env | fzf-
 alias nv="nvim ."
 alias py=python3
 alias venv="source ./venv/bin/activate 2> /dev/null; source ./.venv/bin/activate 2> /dev/null; source ./env/bin/activate 2> /dev/null; source ./.env/bin/activate 2> /dev/null"
+alias lz=lazygit
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
