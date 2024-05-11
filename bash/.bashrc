@@ -118,7 +118,7 @@ fi
 . "$HOME/.cargo/env"
 
 # Tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
   exec tmux
 fi
 # Starship setup
@@ -129,7 +129,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github_auth
 
 # Aliases
-alias fd=fdfind
+#alias fd=fdfind
 alias v="fd --type f --hidden --exclude .git --exclude venv --exclude env | fzf-tmux -p --reverse | xargs nvim" # Fuzzy find | open in neovim 
 alias nv="nvim ."
 alias py=python3
@@ -143,12 +143,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/cheyatz/google-cloud-sdk/path.bash.inc' ]; then . '/home/cheyatz/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/cheyatz/google-cloud-sdk/completion.bash.inc' ]; then . '/home/cheyatz/google-cloud-sdk/completion.bash.inc'; fi
-
+# The next line enables shell command completion for gcloud. if [ -f '/home/cheyatz/google-cloud-sdk/completion.bash.inc' ]; then . '/home/cheyatz/google-cloud-sdk/completion.bash.inc'; fi
 export DISPLAY=:0
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# Flutter
+export PATH="$HOME/flutter/bin:$PATH"
