@@ -118,9 +118,9 @@ fi
 . "$HOME/.cargo/env"
 
 # Tmux
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
-  exec tmux
-fi
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
+#  exec tmux
+#fi
 # Starship setup
 eval "$(starship init bash)"
 
@@ -152,3 +152,14 @@ export PATH=$BUN_INSTALL/bin:$PATH
 
 # Flutter
 export PATH="$HOME/flutter/bin:$PATH"
+
+# Mojo stuff
+export LD_LIBRARY_PATH=/opt/missing-mojo-deps/lib/x86_64-linux-gnu:/opt/missing-mojo-deps/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+# >>> xmake >>>
+test -f "/home/saphal/.xmake/profile" && source "/home/saphal/.xmake/profile"
+# <<< xmake <<<
+#
+
+# VCPKG
+export VCPKG_ROOT=/path/to/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
